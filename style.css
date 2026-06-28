@@ -40,6 +40,14 @@ z-index:999;
 .logo img:hover{
     transform:scale(1.05);
 }
+
+@media(max-width:768px){
+
+    .logo img{
+        height:45px;
+    }
+
+}
 .nav-links{
 display:flex;
 list-style:none;
