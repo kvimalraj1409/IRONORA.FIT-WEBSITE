@@ -1,142 +1,145 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | SQUAD7 Fitness</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            color: #222;
+            background: #fff;
+        }
 
-<title>About | SQUAD7 FTINESS</title>
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+        }
 
-<meta name="description"
-content="Learn more about SQUAD7 Fitness and our mission.">
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            text-decoration: none;
+            color: #000;
+        }
 
-<link rel="stylesheet" href="style.css">
+        .logo span {
+            color: #0098CC;
+        }
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        .nav-links a {
+            margin: 0 12px;
+            text-decoration: none;
+            color: #555;
+        }
 
+        .nav-links a:hover,
+        .active {
+            color: #0098CC;
+        }
+
+        .hero,
+        section {
+            padding: 80px 5%;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #fff, #eef7fb);
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 56px;
+            margin: 0 0 20px;
+        }
+
+        h2 {
+            font-size: 42px;
+        }
+
+        .btn {
+            background: #0098CC;
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            padding: 25px;
+            border: 1px solid #ddd;
+            background: #f8f8f8;
+        }
+
+        footer {
+            background: #f1f1f1;
+            padding: 30px 5%;
+            text-align: center;
+            margin-top: 60px;
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-<nav class="navbar">
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">
+            SQUAD<span>7</span> Fitness
+        </a>
 
-<div class="logo">SQUAD7 FITNESS</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="services.html">Services</a>
+            <a href="trainers.html">Trainers</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
 
-<ul class="nav-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html" class="active">About</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="index.html#contact">Contact</a></li>
-</ul>
+    <!-- About Section -->
+    <section>
+        <h2>About SQUAD7</h2>
 
-<div class="menu-toggle">
-<i class="fas fa-bars"></i>
-</div>
+        <p>
+            SQUAD7 Fitness is built on seven core principles:
+            <strong>Discipline, Consistency, Intensity, Recovery,
+            Nutrition, Evolution, and Mindset.</strong>
+        </p>
 
-</nav>
-</header>
+        <div class="card">
+            <h3>Mission</h3>
 
-<section class="page-hero">
-<h1>About SQUAD7 Fitness</h1>
+            <p>
+                To transform lives through science-based coaching,
+                expert guidance, and strong community support.
+            </p>
+        </div>
+    </section>
 
-<p>
-Transforming Lives Through Fitness, Nutrition & Lifestyle Coaching and Online Fitness.
-</p>
-</section>
-
-<section class="section">
-<div class="content-box">
-
-<h2>Our Story</h2>
-
-<p>
-SQUAD7 Fitness was founded with a mission to help individuals achieve sustainable health and fitness through expert coaching, 
-personalized guidance, and a supportive community. We believe fitness is not just about exercise—it's about building a healthier lifestyle.
-</p>
-
-</div>
-</section>
-
-<section class="section">
-<div class="vision-mission">
-
-<div class="card">
-<h3>Vision</h3>
-<p>
-To inspire and empower people to lead healthier, stronger, and happier lives.
-</p>
-</div>
-
-<div class="card">
-<h3>Mission</h3>
-
-<ul>
-<li>Deliver personalized fitness solutions.</li>
-<li>Promote healthy lifestyle habits.</li>
-<li>Create a motivating and supportive environment.</li>
-<li>Focus on long-term sustainable results.</li>
-</ul>
-
-</div>
-
-</div>
-</section>
-
-<section class="section">
-
-<h2 class="center">Core Values</h2>
-
-<div class="values-grid">
-
-<div class="card">Discipline</div>
-<div class="card">Consistency</div>
-<div class="card">Intensity</div>
-<div class="card">Recovery</div>
-<div class="card">Nutrition</div>
-<div class="card">Evolution</div>
-<div class="card">Mindset</div>
-
-</div>
-
-</section>
-
-<section class="cta">
-
-<h2>Start Your Fitness Journey Today</h2>
-
-<a href="#" class="btn">Join SQUAD7 FITNESS</a>
-
-</section>
-
-<footer>
-
-<div class="footer-grid">
-
-<div>
-<h3>SQUAD7 Fitness</h3>
-</div>
-
-<div>
-<a href="index.html">Home</a>
-<a href="gallery.html">Gallery</a>
-</div>
-
-<div class="socials">
-<i class="fab fa-facebook-f"></i>
-<i class="fab fa-instagram"></i>
-</div>
-
-</div>
-
-<p class="copyright">
-© 2026 SQUAD7 Fitness. All Rights Reserved.
-</p>
-
-</footer>
-
-<script src="script.js"></script>
+    <!-- Footer -->
+    <footer>
+        © 2026 SQUAD7 Fitness | 7 Principles. 1 Squad. Real Results.
+    </footer>
 
 </body>
+
 </html>
