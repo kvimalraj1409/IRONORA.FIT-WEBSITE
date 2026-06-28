@@ -1,16 +1,21 @@
-/* ===========================
+/* ==========================================
    GOOGLE FONT
-=========================== */
+========================================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-/* ===========================
+/* ==========================================
    RESET
-=========================== */
+========================================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:'Poppins',sans-serif;
+}
+
+html{
     scroll-behavior:smooth;
 }
 
@@ -19,9 +24,9 @@
     --black:#000000;
     --grey:#8E9498;
     --white:#FFFFFF;
-    --light:#f8f9fa;
-    --shadow:0 8px 25px rgba(0,0,0,0.08);
-    --transition:all .3s ease;
+    --light:#F7F9FB;
+    --shadow:0 8px 30px rgba(0,0,0,0.08);
+    --transition:0.3s ease;
 }
 
 body{
@@ -31,9 +36,21 @@ body{
     overflow-x:hidden;
 }
 
-/* ===========================
+/* ==========================================
    GLOBAL
-=========================== */
+========================================== */
+
+img{
+    display:block;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
 
 .section{
     padding:100px 8%;
@@ -44,48 +61,41 @@ body{
     margin:auto;
 }
 
-h1,h2,h3{
-    line-height:1.2;
-}
-
-img{
-    max-width:100%;
-    display:block;
-}
-
 .center{
     text-align:center;
 }
 
-/* ===========================
+/* ==========================================
    NAVBAR
-=========================== */
+========================================== */
 
 .navbar{
     position:sticky;
     top:0;
-    left:0;
     width:100%;
-    background:rgba(255,255,255,0.98);
+    background:rgba(255,255,255,0.97);
     backdrop-filter:blur(10px);
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:12px 8%;
-    box-shadow:0 2px 15px rgba(0,0,0,.08);
+    box-shadow:0 2px 15px rgba(0,0,0,0.08);
     z-index:9999;
 }
+
+/* ===== LOGO FIX ===== */
 
 .logo{
     display:flex;
     align-items:center;
-    text-decoration:none;
+    flex-shrink:0;
 }
 
 .logo img{
-    height:65px;
-    width:auto;
-    max-width:220px;
+    width:180px !important;
+    height:auto !important;
+    max-width:180px !important;
+    max-height:70px !important;
     object-fit:contain;
     transition:var(--transition);
 }
@@ -94,24 +104,20 @@ img{
     transform:scale(1.03);
 }
 
+/* ===== NAV LINKS ===== */
+
 .nav-links{
     display:flex;
     align-items:center;
-    list-style:none;
     gap:35px;
 }
 
-.nav-links li{
-    list-style:none;
-}
-
 .nav-links a{
-    text-decoration:none;
     color:var(--black);
     font-size:15px;
     font-weight:600;
-    transition:var(--transition);
     position:relative;
+    transition:var(--transition);
 }
 
 .nav-links a:hover,
@@ -122,10 +128,10 @@ img{
 .nav-links a::after{
     content:'';
     position:absolute;
+    left:0;
+    bottom:-6px;
     width:0;
     height:2px;
-    left:0;
-    bottom:-5px;
     background:var(--primary);
     transition:var(--transition);
 }
@@ -141,22 +147,25 @@ img{
     cursor:pointer;
 }
 
-/* ===========================
+/* ==========================================
    HERO SECTION
-=========================== */
+========================================== */
 
 .hero,
 .page-hero{
     min-height:90vh;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     text-align:center;
     padding:120px 8%;
     color:var(--white);
+
     background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    linear-gradient(rgba(0,0,0,0.65),
+    rgba(0,0,0,0.65)),
     url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=80');
+
     background-size:cover;
     background-position:center;
 }
@@ -175,39 +184,38 @@ img{
 .hero p,
 .page-hero p{
     font-size:1.2rem;
-    color:#e5e5e5;
+    color:#f1f1f1;
     animation:fadeUp 1.2s ease;
 }
 
-/* ===========================
-   BUTTON
-=========================== */
+/* ==========================================
+   BUTTONS
+========================================== */
 
 .btn{
     display:inline-block;
     margin-top:30px;
-    padding:15px 35px;
-    border-radius:50px;
-    text-decoration:none;
     background:var(--primary);
     color:var(--white);
+    padding:15px 35px;
+    border-radius:50px;
     font-weight:600;
     transition:var(--transition);
 }
 
 .btn:hover{
     transform:translateY(-5px);
-    box-shadow:0 10px 20px rgba(10,169,245,.3);
+    box-shadow:0 12px 25px rgba(10,169,245,0.3);
 }
 
-/* ===========================
+/* ==========================================
    CARDS
-=========================== */
+========================================== */
 
 .features .container,
 .values-grid,
-.footer-grid,
-.vision-mission{
+.vision-mission,
+.footer-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:30px;
@@ -217,8 +225,8 @@ img{
     background:var(--white);
     padding:40px 30px;
     border-radius:20px;
-    text-align:center;
     box-shadow:var(--shadow);
+    text-align:center;
     transition:var(--transition);
 }
 
@@ -237,17 +245,16 @@ img{
 }
 
 .card ul{
-    list-style:none;
     text-align:left;
 }
 
 .card ul li{
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
 
-/* ===========================
+/* ==========================================
    ABOUT PAGE
-=========================== */
+========================================== */
 
 .content-box{
     max-width:1000px;
@@ -267,14 +274,14 @@ img{
 }
 
 .values-grid .card{
-    font-size:1.2rem;
     font-weight:600;
+    font-size:1.1rem;
 }
 
 .cta{
     text-align:center;
     padding:100px 8%;
-    background:linear-gradient(135deg,#0AA9F5,#0788c6);
+    background:linear-gradient(135deg,#0AA9F5,#0587c9);
     color:var(--white);
 }
 
@@ -282,24 +289,41 @@ img{
     font-size:2.5rem;
 }
 
-/* ===========================
+/* ==========================================
+   CONTACT
+========================================== */
+
+.contact{
+    background:var(--light);
+    text-align:center;
+}
+
+.contact h2{
+    margin-bottom:20px;
+}
+
+.contact p{
+    margin-bottom:10px;
+}
+
+/* ==========================================
    GALLERY
-=========================== */
+========================================== */
 
 .filters{
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
-    gap:12px;
-    padding:60px 8% 20px;
+    gap:10px;
+    padding:50px 8% 20px;
 }
 
 .filter-btn{
-    padding:12px 25px;
+    padding:12px 24px;
     border:none;
     border-radius:30px;
+    background:#e9e9e9;
     cursor:pointer;
-    background:#ececec;
     font-weight:500;
     transition:var(--transition);
 }
@@ -311,42 +335,39 @@ img{
 }
 
 .gallery-grid{
-    padding:50px 8% 100px;
+    padding:60px 8% 100px;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
     gap:25px;
 }
 
 .gallery-item{
-    overflow:hidden;
     border-radius:20px;
-    box-shadow:var(--shadow);
+    overflow:hidden;
     cursor:pointer;
+    box-shadow:var(--shadow);
 }
 
 .gallery-item img{
     width:100%;
     height:350px;
     object-fit:cover;
-    transition:.5s ease;
+    transition:0.5s ease;
 }
 
 .gallery-item:hover img{
     transform:scale(1.1);
 }
 
-/* ===========================
+/* ==========================================
    LIGHTBOX
-=========================== */
+========================================== */
 
 #lightbox{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.95);
     display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.95);
     justify-content:center;
     align-items:center;
     z-index:99999;
@@ -366,26 +387,9 @@ img{
     cursor:pointer;
 }
 
-/* ===========================
-   CONTACT
-=========================== */
-
-.contact{
-    background:var(--light);
-    text-align:center;
-}
-
-.contact h2{
-    margin-bottom:20px;
-}
-
-.contact p{
-    margin-bottom:10px;
-}
-
-/* ===========================
+/* ==========================================
    FOOTER
-=========================== */
+========================================== */
 
 footer{
     background:var(--black);
@@ -403,8 +407,7 @@ footer h3{
 
 footer a{
     display:block;
-    color:#ccc;
-    text-decoration:none;
+    color:#cccccc;
     margin-bottom:10px;
     transition:var(--transition);
 }
@@ -426,29 +429,32 @@ footer a:hover{
 
 .copyright{
     text-align:center;
-    padding-top:30px;
-    border-top:1px solid rgba(255,255,255,.1);
+    border-top:1px solid rgba(255,255,255,0.1);
+    padding-top:25px;
     color:#999;
 }
 
-/* ===========================
-   ANIMATIONS
-=========================== */
+/* ==========================================
+   ANIMATION
+========================================== */
 
 @keyframes fadeUp{
+
     from{
         opacity:0;
         transform:translateY(40px);
     }
+
     to{
         opacity:1;
         transform:translateY(0);
     }
+
 }
 
-/* ===========================
+/* ==========================================
    RESPONSIVE
-=========================== */
+========================================== */
 
 @media(max-width:991px){
 
@@ -458,7 +464,8 @@ footer a:hover{
     }
 
     .logo img{
-        height:55px;
+        width:150px !important;
+        max-width:150px !important;
     }
 }
 
@@ -470,14 +477,14 @@ footer a:hover{
 
     .nav-links{
         position:absolute;
-        top:90px;
+        top:85px;
         left:0;
         width:100%;
         background:var(--white);
         flex-direction:column;
         padding:30px 0;
         display:none;
-        box-shadow:0 10px 20px rgba(0,0,0,.08);
+        box-shadow:0 8px 20px rgba(0,0,0,0.08);
     }
 
     .nav-links.active{
@@ -495,8 +502,8 @@ footer a:hover{
     }
 
     .logo img{
-        height:45px;
-        max-width:160px;
+        width:120px !important;
+        max-width:120px !important;
     }
 
     .content-box{
@@ -518,5 +525,4 @@ footer a:hover{
     .gallery-grid{
         grid-template-columns:1fr;
     }
-
 }
