@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trainers — Squad7 Fitness</title>
+<title>Gallery — Squad7 Fitness</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -77,25 +77,33 @@
   @media (max-width: 600px) { section { padding: 60px 5vw; } }
 </style>
 <style>
-  .trainers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; margin-top: 60px; }
-  .trainer-card { background: #fff; padding: 32px; border: 1px solid var(--border); position: relative; overflow: hidden; transition: border-color 0.2s, transform 0.2s; }
-  .trainer-card:hover { border-color: var(--accent); transform: translateY(-4px); }
-  .trainer-avatar { width: 64px; height: 64px; background: rgba(0,152,204,0.1); border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 900; color: var(--accent); margin-bottom: 20px; }
-  .trainer-badge { position: absolute; top: 0; right: 0; background: var(--accent); color: #FFF; font-family: 'Barlow Condensed', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 6px 14px; }
-  .trainer-name { font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 900; text-transform: uppercase; margin-bottom: 6px; color: var(--text); }
-  .trainer-exp { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
-  .trainer-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .tag { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 5px 10px; background: var(--section); border: 1px solid var(--border); color: var(--subtext); }
+  .gallery-filter { display: flex; gap: 0; margin: 48px 0 40px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+  .filter-btn { background: none; border: none; cursor: pointer; font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--subtext); padding: 14px 24px; border-bottom: 3px solid transparent; transition: color 0.2s, border-color 0.2s; margin-bottom: -1px; }
+  .filter-btn:hover { color: var(--text); }
+  .filter-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+  .gallery-item { position: relative; overflow: hidden; aspect-ratio: 4/3; background: var(--card); border: 1px solid var(--border); cursor: pointer; transition: transform 0.2s, border-color 0.2s; }
+  .gallery-item:hover { transform: translateY(-4px); border-color: var(--accent); }
+  .gallery-item:hover .gallery-overlay { opacity: 1; }
+  .gallery-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
+  .gallery-icon { font-size: 48px; color: rgba(0,152,204,0.25); }
+  .gallery-label { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--subtext); }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .gallery-overlay { position: absolute; inset: 0; background: rgba(0,152,204,0.85); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.2s; }
+  .gallery-overlay span { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #fff; }
+  .upload-notice { margin-top: 48px; padding: 32px; background: rgba(0,152,204,0.05); border: 1px dashed rgba(0,152,204,0.3); text-align: center; }
+  .upload-notice p { color: var(--subtext); font-size: 15px; line-height: 1.7; }
+  .upload-notice strong { color: var(--accent); }
 </style>
 </head>
 <body>
 <nav>
-  <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Squad7 Fitness"><span class="nav-logo-text">SQUAD<span>7</span> FITNESS</span></a>
+  <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Squad7 Fitness"></a>
   <ul class="nav-links">
     <li><a href="about.html">About</a></li>
     <li><a href="services.html">Services</a></li>
-    <li><a href="trainers.html" class="active">Trainers</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="trainers.html">Trainers</a></li>
+    <li><a href="gallery.html" class="active">Gallery</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="contact.html" class="nav-cta">Join Now</a></li>
   </ul>
@@ -112,57 +120,54 @@
 <div class="page-hero">
   <div class="page-hero-grid"></div>
   <div class="page-hero-content">
-    <p class="section-label">Expert Team</p>
-    <h1 class="section-title">Meet The<br>Squad.</h1>
-    <p class="section-sub">Our coaches bring decades of combined experience across strength, fat loss, rehabilitation, HIIT, and beyond.</p>
+    <p class="section-label">Squad Life</p>
+    <h1 class="section-title">Our<br>Gallery.</h1>
+    <p class="section-sub">A glimpse into the Squad7 community — real members, real training, real transformation.</p>
   </div>
 </div>
-<section style="background:var(--section);">
-  <div class="trainers-grid">
-    <div class="trainer-card reveal">
-      <div class="trainer-badge">Head Coach</div>
-      <div class="trainer-avatar">VG</div>
-      <div class="trainer-name">Vignesh</div>
-      <div class="trainer-exp">10+ Years Experience</div>
-      <div class="trainer-tags"><span class="tag">Fat Loss</span><span class="tag">Strength</span><span class="tag">Rehab</span><span class="tag">Diet Counselling</span><span class="tag">Sports Recovery</span></div>
+<section>
+  <div class="reveal">
+    <div class="gallery-filter">
+      <button class="filter-btn active" onclick="filterGallery('all', this)">All</button>
+      <button class="filter-btn" onclick="filterGallery('training', this)">Training</button>
+      <button class="filter-btn" onclick="filterGallery('community', this)">Community</button>
+      <button class="filter-btn" onclick="filterGallery('studio', this)">Studio</button>
+      <button class="filter-btn" onclick="filterGallery('events', this)">Events</button>
     </div>
-    <div class="trainer-card reveal">
-      <div class="trainer-badge">Head Coach</div>
-      <div class="trainer-avatar">ND</div>
-      <div class="trainer-name">Nandheesh</div>
-      <div class="trainer-exp">10+ Years Experience</div>
-      <div class="trainer-tags"><span class="tag">Fat Loss</span><span class="tag">Strength</span><span class="tag">Rehab</span><span class="tag">Diet Counselling</span><span class="tag">HIIT</span></div>
-    </div>
-    <div class="trainer-card reveal">
-      <div class="trainer-avatar">PM</div>
-      <div class="trainer-name">Poornima</div>
-      <div class="trainer-exp">10+ Years Experience</div>
-      <div class="trainer-tags"><span class="tag">Personal Training</span><span class="tag">HIIT</span><span class="tag">Cross Fit</span><span class="tag">Weight Loss</span></div>
-    </div>
-    <div class="trainer-card reveal">
-      <div class="trainer-avatar">SV</div>
-      <div class="trainer-name">Shiva</div>
-      <div class="trainer-exp">5+ Years Experience</div>
-      <div class="trainer-tags"><span class="tag">Strength</span><span class="tag">HIIT</span><span class="tag">Cross Fit</span></div>
-    </div>
-    <div class="trainer-card reveal">
-      <div class="trainer-avatar">SD</div>
-      <div class="trainer-name">Sudharsan</div>
-      <div class="trainer-exp">3+ Years Experience</div>
-      <div class="trainer-tags"><span class="tag">Personal Training</span><span class="tag">HIIT</span><span class="tag">Cross Fit</span></div>
-    </div>
-    <div class="trainer-card reveal">
-      <div class="trainer-avatar">GK</div>
-      <div class="trainer-name">Gokul</div>
-      <div class="trainer-exp">2+ Years Experience</div>
-      <div class="trainer-tags"><span class="tag">Personal Training</span><span class="tag">HIIT</span><span class="tag">Cross Fit</span></div>
-    </div>
+  </div>
+  <div class="gallery-grid reveal" id="galleryGrid">
+    <div class="gallery-item" data-cat="training"><img src="images/gym_interior.jpg" alt="Strength Training"><div class="gallery-overlay"><span>Training Session</span></div></div>
+    <div class="gallery-item" data-cat="community"><img src="images/group_workouts.jpg" alt="Squad Community"><div class="gallery-overlay"><span>Community</span></div></div>
+    <div class="gallery-item" data-cat="studio"><img src="images/gym_interior.jpg" alt="Peelamedu Studio"><div class="gallery-overlay"><span>Studio Tour</span></div></div>
+    <div class="gallery-item" data-cat="training"><img src="images/group_workouts.jpg" alt="HIIT Class"><div class="gallery-overlay"><span>HIIT Session</span></div></div>
+    <div class="gallery-item" data-cat="events"><img src="images/events.jpg" alt="Transformation Event"><div class="gallery-overlay"><span>Events</span></div></div>
+    <div class="gallery-item" data-cat="training"><img src="images/gym_interior.jpg" alt="Yoga Class"><div class="gallery-overlay"><span>Yoga Session</span></div></div>
+    <div class="gallery-item" data-cat="studio"><img src="images/gym_interior.jpg" alt="Kumalan Kuttai Studio"><div class="gallery-overlay"><span>Studio Tour</span></div></div>
+    <div class="gallery-item" data-cat="community"><img src="images/gym_interior.jpg" alt="Member Progress"><div class="gallery-overlay"><span>Transformation</span></div></div>
+    <div class="gallery-item" data-cat="events"><img src="images/gym_interior.jpg" alt="Squad Challenge"><div class="gallery-overlay"><span>Challenges</span></div></div>
+    <div class="gallery-item" data-cat="training"><img src="images/gym_interior.jpg" alt="Cardio Training"><div class="gallery-overlay"><span>Cardio</span></div></div>
+    <div class="gallery-item" data-cat="community"><img src="images/gym_interior.jpg" alt="Member Stories"><div class="gallery-overlay"><span>Success Stories</span></div></div>
+    <div class="gallery-item" data-cat="training"><img src="images/gym_interior.jpg" alt="CrossFit Training"><div class="gallery-overlay"><span>CrossFit</span></div></div>
+  </div>
+  <div class="upload-notice reveal" style="margin-top:40px;">
+    <p>📸 <strong>Got Squad7 moments?</strong> Replace these placeholders with real photos by adding <code>src="your-image.jpg"</code> to each gallery item's <code>&lt;img&gt;</code> tag.</p>
   </div>
 </section>
 <footer><div class="footer-top"><div class="footer-brand"><span class="logo">SQUAD<span>7</span> FITNESS</span><p>A results-driven fitness community built on discipline, structure, and real transformation.</p></div><div class="footer-taglines"><p><span>7 Principles.</span> 1 Squad. Real Results.</p><p>More Than a Gym. <span>A Fitness Community.</span></p></div></div><div class="footer-bottom"><p>&copy; 2025 Squad7 Fitness. All rights reserved.</p><p>Tamil Nadu, India</p></div></footer>
 <script>
 function toggleMenu() { document.getElementById("mobileMenu").classList.toggle("open"); }
 function closeMenu() { document.getElementById("mobileMenu").classList.remove("open"); }
+function filterGallery(cat, btn) {
+  document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  document.querySelectorAll(".gallery-item").forEach(item => {
+    if (cat === "all" || item.dataset.cat === cat) {
+      item.style.display = "";
+    } else {
+      item.style.display = "none";
+    }
+  });
+}
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add("visible"), i * 100); } });
 }, { threshold: 0.1 });
