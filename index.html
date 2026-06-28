@@ -1,118 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | SQUAD7 Fitness</title>
 
-    <title>SQUAD7 FITNESS | Premium Fitness Studio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            color: #222;
+            background: #fff;
+        }
 
-    <meta name="description"
-        content="SQUAD7 Fitness - Premium Fitness Studio offering fitness coaching, nutrition counselling and lifestyle transformation.">
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+        }
 
-    <meta name="keywords"
-        content="SQUAD7 Fitness, Gym, Fitness Studio, Nutrition, Lifestyle Coaching, Online Fitness Class">
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            text-decoration: none;
+            color: #000;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        .logo span {
+            color: #0098CC;
+        }
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        .nav-links a {
+            margin: 0 12px;
+            text-decoration: none;
+            color: #555;
+        }
 
+        .nav-links a:hover,
+        .active {
+            color: #0098CC;
+        }
+
+        .hero,
+        section {
+            padding: 80px 5%;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #fff, #eef7fb);
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 56px;
+            margin: 0 0 20px;
+        }
+
+        h2 {
+            font-size: 42px;
+        }
+
+        .btn {
+            background: #0098CC;
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            padding: 25px;
+            border: 1px solid #ddd;
+            background: #f8f8f8;
+        }
+
+        footer {
+            background: #f1f1f1;
+            padding: 30px 5%;
+            text-align: center;
+            margin-top: 60px;
+        }
+    </style>
 </head>
 
 <body>
 
-    <header>
-        <nav class="navbar">
-           <div class="logo">SQUAD7 FITNESS</div>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">
+            SQUAD<span>7</span> Fitness
+        </a>
 
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="trainers.html">Trainers</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
 
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </header>
-
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>7 Principles. 1 Squad. Real Results.</h1>
+        <div>
+            <h1>
+                7 Principles.<br>
+                <span style="color: #0098CC;">1 Squad.</span><br>
+                Real Results.
+            </h1>
 
-            <p>Premium Fitness Studio, Nutrition & Lifestyle Coaching, Online Fitness.</p>
+            <p>
+                Premium fitness coaching, transformation programs,
+                and nutrition guidance.
+            </p>
 
-            <a href="about.html" class="btn">Explore SQUAD7 FITNESS</a>
+            <a href="contact.html" class="btn">
+                Start Today
+            </a>
         </div>
     </section>
 
-    <section class="features section">
-        <div class="container">
-
-            <div class="card">
-                <i class="fas fa-dumbbell"></i>
-                <h3>Fitness Coaching</h3>
-                <p>Expert guidance tailored to your goals.</p>
-            </div>
-
-            <div class="card">
-                <i class="fas fa-apple-alt"></i>
-                <h3>Nutrition & Lifestyle Coaching</h3>
-                <p>Personalized nutrition strategies for sustainable results. Build long-term healthy habits.</p>
-            </div>
-
-            <div class="card">
-                <i class="fas fa-laptop-house"></i>
-                <h3>Online Fitness Class</h3>
-                <p>Train Anywhere. Transform Everywhere.</p>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="contact" class="contact section">
-        <h2>Contact Us</h2>
-
-        <p>Phone: +91 99442 70783</p>
-        <p>Email: info@squad7fitness.com</p>
-        <p>Website: SQUAD7 Fitness Official Website</p>
-    </section>
-
+    <!-- Footer -->
     <footer>
-        <div class="footer-grid">
-
-            <div>
-                <h3>SQUAD7 FITNESS</h3>
-                <p>Premium Fitness Experience.</p>
-            </div>
-
-            <div>
-                <h3>Quick Links</h3>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="gallery.html">Gallery</a>
-            </div>
-
-            <div>
-                <h3>Follow Us</h3>
-
-                <div class="socials">
-                    <i class="fab fa-facebook-f"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-youtube"></i>
-                </div>
-            </div>
-
-        </div>
-
-        <p class="copyright">
-            © 2026 SQUAD7 Fitness. All Rights Reserved.
-        </p>
+        © 2026 SQUAD7 Fitness | 7 Principles. 1 Squad. Real Results.
     </footer>
 
-    <script src="script.js"></script>
-
 </body>
+
 </html>
