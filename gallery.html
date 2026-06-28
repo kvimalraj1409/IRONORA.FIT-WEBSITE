@@ -88,6 +88,7 @@
   .gallery-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
   .gallery-icon { font-size: 48px; color: rgba(0,152,204,0.25); }
   .gallery-label { font-family: 'Barlow Condensed', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--subtext); }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .gallery-overlay { position: absolute; inset: 0; background: rgba(0,152,204,0.85); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.2s; }
   .gallery-overlay span { font-family: 'Barlow Condensed', sans-serif; font-size: 16px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #fff; }
   .upload-notice { margin-top: 48px; padding: 32px; background: rgba(0,152,204,0.05); border: 1px dashed rgba(0,152,204,0.3); text-align: center; }
@@ -120,7 +121,7 @@
   <div class="page-hero-grid"></div>
   <div class="page-hero-content">
     <p class="section-label">Squad Life</p>
-    <h1 class="section-title">Our Gallery.</h1>
+    <h1 class="section-title">Our<br>Gallery.</h1>
     <p class="section-sub">A glimpse into the Squad7 community — real members, real training, real transformation.</p>
   </div>
 </div>
@@ -135,22 +136,21 @@
     </div>
   </div>
   <div class="gallery-grid reveal" id="galleryGrid">
-    <div class="gallery-item" data-cat="training"><div class="gallery-placeholder"><div class="gallery-icon">🏋️</div><div class="gallery-label">Strength Training</div></div><div class="gallery-overlay"><span>Training Session</span></div></div>
-    <div class="gallery-item" data-cat="community"><div class="gallery-placeholder"><div class="gallery-icon">🤝</div><div class="gallery-label">Squad Community</div></div><div class="gallery-overlay"><span>Community</span></div></div>
-    <div class="gallery-item" data-cat="studio"><div class="gallery-placeholder"><div class="gallery-icon">🏢</div><div class="gallery-label">Peelamedu Studio</div></div><div class="gallery-overlay"><span>Studio Tour</span></div></div>
-    <div class="gallery-item" data-cat="training"><div class="gallery-placeholder"><div class="gallery-icon">🔥</div><div class="gallery-label">HIIT Class</div></div><div class="gallery-overlay"><span>HIIT Session</span></div></div>
-    <div class="gallery-item" data-cat="events"><div class="gallery-placeholder"><div class="gallery-icon">🏆</div><div class="gallery-label">Transformation Event</div></div><div class="gallery-overlay"><span>Events</span></div></div>
-    <div class="gallery-item" data-cat="training"><div class="gallery-placeholder"><div class="gallery-icon">🧘</div><div class="gallery-label">Yoga Class</div></div><div class="gallery-overlay"><span>Yoga Session</span></div></div>
-    <div class="gallery-item" data-cat="studio"><div class="gallery-placeholder"><div class="gallery-icon">🏢</div><div class="gallery-label">Kumalan Kuttai Studio</div></div><div class="gallery-overlay"><span>Studio Tour</span></div></div>
-    <div class="gallery-item" data-cat="community"><div class="gallery-placeholder"><div class="gallery-icon">💪</div><div class="gallery-label">Member Progress</div></div><div class="gallery-overlay"><span>Transformation</span></div></div>
-    <div class="gallery-item" data-cat="events"><div class="gallery-placeholder"><div class="gallery-icon">🎯</div><div class="gallery-label">Squad Challenge</div></div><div class="gallery-overlay"><span>Challenges</span></div></div>
-    <div class="gallery-item" data-cat="training"><div class="gallery-placeholder"><div class="gallery-icon">🏃</div><div class="gallery-label">Cardio Training</div></div><div class="gallery-overlay"><span>Cardio</span></div></div>
-    <div class="gallery-item" data-cat="community"><div class="gallery-placeholder"><div class="gallery-icon">⭐</div><div class="gallery-label">Member Stories</div></div><div class="gallery-overlay"><span>Success Stories</span></div></div>
-    <div class="gallery-item" data-cat="training"><div class="gallery-placeholder"><div class="gallery-icon">🥊</div><div class="gallery-label">CrossFit Training</div></div><div class="gallery-overlay"><span>CrossFit</span></div></div>
+    <div class="gallery-item" data-cat="training"><img src="images/training_session.jpg" alt="Strength Training"><div class="gallery-overlay"><span>Training Session</span></div></div>
+    <div class="gallery-item" data-cat="community"><img src="images/team_event1.JPG" alt="Squad Community"><div class="gallery-overlay"><span>Community</span></div></div>
+    <div class="gallery-item" data-cat="studio"><img src="images/gym_interior.jpg" alt="Peelamedu Studio"><div class="gallery-overlay"><span>Studio Tour</span></div></div>
+    <div class="gallery-item" data-cat="training"><img src="images/HIIT_Class.jpg" alt="HIIT Class"><div class="gallery-overlay"><span>HIIT Session</span></div></div>
+    <div class="gallery-item" data-cat="events"><img src="images/event_prize1.JPG" alt="Transformation Event"><div class="gallery-overlay"><span>Events</span></div></div>
+    <div class="gallery-item" data-cat="training"><img src="images/yogo3.jpg" alt="Yoga Class"><div class="gallery-overlay"><span>Yoga Session</span></div></div>
+    <div class="gallery-item" data-cat="studio"><img src="images/kumalankuttai_interior.jpg" alt="Kumalan Kuttai Studio"><div class="gallery-overlay"><span>Studio Tour</span></div></div>
+    <div class="gallery-item" data-cat="community"><img src="images/Pushups.jpg" alt="Member Progress"><div class="gallery-overlay"><span>Transformation</span></div></div>
+    <div class="gallery-item" data-cat="events"><img src="images/Plank.jpg" alt="Squad Challenge"><div class="gallery-overlay"><span>Challenges</span></div></div>
+    <div class="gallery-item" data-cat="training"><img src="images/cardio_training.jpg" alt="Cardio Training"><div class="gallery-overlay"><span>Cardio</span></div></div>
+    <div class="gallery-item" data-cat="community"><img src="images/gym_interior.jpg" alt="Member Stories"><div class="gallery-overlay"><span>Success Stories</span></div></div>
+    <div class="gallery-item" data-cat="training"><img src="images/HIIT_Class.jpg" alt="CrossFit Training"><div class="gallery-overlay"><span>CrossFit</span></div></div>
   </div>
   <div class="upload-notice reveal" style="margin-top:40px;">
-    <p>📸 <strong>Got Squad7 moments?</strong> Replace these placeholders with real photos by adding <code>src="your-image.jpg"</code> to each gallery item's <code>&lt;img&gt;</code> tag.</p>
-  </div>
+   </div>
 </section>
 <footer><div class="footer-top"><div class="footer-brand"><span class="logo">SQUAD<span>7</span> FITNESS</span><p>A results-driven fitness community built on discipline, structure, and real transformation.</p></div><div class="footer-taglines"><p><span>7 Principles.</span> 1 Squad. Real Results.</p><p>More Than a Gym. <span>A Fitness Community.</span></p></div></div><div class="footer-bottom"><p>&copy; 2025 Squad7 Fitness. All rights reserved.</p><p>Tamil Nadu, India</p></div></footer>
 <script>
